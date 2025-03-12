@@ -1,4 +1,5 @@
-resource "azurerm_resource_group" "B1" {
-    name = "boy"
-  location = "east us"
+resource "azurerm_resource_group" "A1" {
+  for_each = var.varrg
+  name     = each.key
+  location = each.value
 }
